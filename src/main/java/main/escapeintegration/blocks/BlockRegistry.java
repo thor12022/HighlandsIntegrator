@@ -5,18 +5,15 @@ package main.escapeintegration.blocks;
 import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.block.Block;
 
-public class BlockRegistry {
+public class BlockRegistry
+{
 
-	//blocks
-	public static Block quisqueLapisBlock;
-	public static Block quisqueLapisOre;
+   // blocks
+   // public static Block exampleOre;
 
-	public static void registerBlocks() {
-		//I use multiple sections here to sort things. It's just my system, you don't have to. Just delete "registerBlockSet2" and "registerAllBlocks" then make this public. Make sure to change the call in the main class.
-		quisqueLapisOre = new BlockOreQuisqueLapis();
-		GameRegistry.registerBlock(quisqueLapisOre, "BlockOreQuisqueLapis");
-
-		quisqueLapisBlock = new BlockLapisQuisque();
-		GameRegistry.registerBlock(quisqueLapisBlock, "BlockQuisqueLapis");
-	}
+   public static void registerBlocks()
+   {
+      // exampleOre = new BlockOreExample();
+      // GameRegistry.registerBlock(exampleOre, "BlockOreExample");
+   }
 }

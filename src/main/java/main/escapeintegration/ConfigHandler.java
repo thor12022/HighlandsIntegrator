@@ -8,30 +8,31 @@ import net.minecraftforge.common.config.Configuration;
 
 import java.io.File;
 
-public class ConfigHandler {
+public class ConfigHandler
+{
 
-	public static Configuration config;
+   public static Configuration config;
 
-	// Sections to add to the config
-	public static String exampleSection = "Example Section";
-	public static String generation = "Generation";
+   // Sections to add to the config
+   public static String entitySection = "Entity Adjustments";
 
-	// Options in the config
-	public static boolean exampleOption;
-	public static boolean enableGeneration;
+   // Options in the config
+   public static int minerZombieWeight = 1;
+   public static int climbingZombieWeight = 1;
 
-	public static void init(File file) {
-		config = new Configuration(file);
-		syncConfig();
-	}
+   public static void init(File file)
+   {
+      config = new Configuration(file);
+      syncConfig();
+   }
 
-	public static void syncConfig() {
-		config.addCustomCategoryComment(exampleSection, "Example section comment");
-		config.addCustomCategoryComment(generation, "This section contains all settings regarding ore generation.");
+   public static void syncConfig()
+   {
+      config.addCustomCategoryComment(entitySection, "");
 
-		exampleOption = config.get(exampleSection, "exampleOption", true, "Description of option goes here.").getBoolean(exampleOption);
-		enableGeneration = config.get(generation, "enableGeneration", true, "Enable Lapis Quisque generation").getBoolean(enableGeneration);
+      minerZombieWeight = config.get(entitySection, "Miner Zombie Weight", minerZombieWeight, "").getInt(minerZombieWeight);
+      climbingZombieWeight = config.get(entitySection, "Climbing Zombie Weight", climbingZombieWeight, "").getInt(climbingZombieWeight);
 
-		config.save();
-	}
+      config.save();
+   }
 }

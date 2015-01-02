@@ -3,7 +3,7 @@
   "modid": "escapeintegration",
   "name": "Escape Integration",
   "description": "Integration for the Escape mod-pack",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "mcversion": "1.7.10",
   "url": "",
   "updateUrl": "",

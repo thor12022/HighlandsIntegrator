@@ -12,6 +12,7 @@ import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.network.NetworkRegistry;
+import cpw.mods.fml.common.registry.EntityRegistry;
 import cpw.mods.fml.common.registry.GameRegistry;
 import main.escapeintegration.blocks.BlockRecipeRegistry;
 import main.escapeintegration.blocks.BlockRegistry;
@@ -25,48 +26,62 @@ import main.escapeintegration.util.GenerationHandler;
 import main.escapeintegration.util.OreDictHandler;
 import main.escapeintegration.util.TextHelper;
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.entity.EnumCreatureType;
+import net.minecraft.world.biome.BiomeGenBase;
+import net.minecraftforge.common.BiomeDictionary;
+import net.minecraftforge.common.BiomeManager;
 
+import org.apache.commons.lang3.ArrayUtils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import scala.Array;
+
 @Mod(modid = ModInformation.ID, name = ModInformation.NAME, version = ModInformation.VERSION, dependencies = ModInformation.DEPEND, guiFactory = ModInformation.GUIFACTORY)
-public class EscapeIntegration {
+public class EscapeIntegration
+{
 
-	@SidedProxy(clientSide = ModInformation.CLIENTPROXY, serverSide = ModInformation.COMMONPROXY)
-	public static CommonProxy proxy;
+   @SidedProxy(clientSide = ModInformation.CLIENTPROXY, serverSide = ModInformation.COMMONPROXY)
+   public static CommonProxy proxy;
 
-	public static CreativeTabs tabBaseMod = new CreativeTabBaseMod(ModInformation.ID + ".creativeTab");
-	public static Logger logger = LogManager.getLogger(ModInformation.NAME);
+   public static CreativeTabs tabBaseMod = new CreativeTabBaseMod(ModInformation.ID + ".creativeTab");
+   public static Logger logger = LogManager.getLogger(ModInformation.NAME);
 
-	@Mod.Instance
-	public static EscapeIntegration instance;
+   @Mod.Instance
+   public static EscapeIntegration instance;
 
-	@Mod.EventHandler
-	public void preInit(FMLPreInitializationEvent event) {
-		logger.info(TextHelper.localize("info." + ModInformation.ID + ".console.load.preInit"));
+   private static BiomeGenBase[] vanillaOverworldBiomes = new BiomeGenBase[] { BiomeGenBase.plains, BiomeGenBase.desert, BiomeGenBase.extremeHills, BiomeGenBase.forest, BiomeGenBase.taiga, BiomeGenBase.swampland, BiomeGenBase.icePlains, BiomeGenBase.iceMountains, BiomeGenBase.beach, BiomeGenBase.desertHills, BiomeGenBase.forestHills, BiomeGenBase.taigaHills, BiomeGenBase.extremeHillsEdge, BiomeGenBase.jungle, BiomeGenBase.jungleHills, BiomeGenBase.jungleEdge, BiomeGenBase.stoneBeach, BiomeGenBase.coldBeach, BiomeGenBase.birchForest, BiomeGenBase.birchForestHills, BiomeGenBase.roofedForest, BiomeGenBase.coldTaiga, BiomeGenBase.coldTaigaHills, BiomeGenBase.megaTaiga, BiomeGenBase.megaTaigaHills, BiomeGenBase.extremeHillsPlus, BiomeGenBase.savanna, BiomeGenBase.savannaPlateau, BiomeGenBase.mesa, BiomeGenBase.mesaPlateau, BiomeGenBase.mesaPlateau_F };
+   
+   @Mod.EventHandler
+   public void preInit(FMLPreInitializationEvent event)
+   {
+      logger.info(TextHelper.localize("info." + ModInformation.ID + ".console.load.preInit"));
 
-		ConfigHandler.init(event.getSuggestedConfigurationFile());
+      ConfigHandler.init(event.getSuggestedConfigurationFile());
 
-		ItemRegistry.registerItems();
-		BlockRegistry.registerBlocks();
+      ItemRegistry.registerItems();
+      BlockRegistry.registerBlocks();
 
-		OreDictHandler.registerOreDict();
-		FMLCommonHandler.instance().bus().register(new EventHandler());
-		NetworkRegistry.INSTANCE.registerGuiHandler(instance, new GuiHandler());
+      OreDictHandler.registerOreDict();
+      FMLCommonHandler.instance().bus().register(new EventHandler());
+      NetworkRegistry.INSTANCE.registerGuiHandler(instance, new GuiHandler());
 
-		GameRegistry.registerWorldGenerator(new GenerationHandler(), 2);
-	}
+      GameRegistry.registerWorldGenerator(new GenerationHandler(), 2);
+   }
 
-	@Mod.EventHandler
-	public void init(FMLInitializationEvent event) {
-		logger.info(TextHelper.localize("info." + ModInformation.ID + ".console.load.init"));
+   @Mod.EventHandler
+   public void init(FMLInitializationEvent event)
+   {
+      logger.info(TextHelper.localize("info." + ModInformation.ID + ".console.load.init"));
 
-		ItemRecipeRegistry.registerItemRecipes();
-		BlockRecipeRegistry.registerBlockRecipes();
-	}
+      ItemRecipeRegistry.registerItemRecipes();
+      BlockRecipeRegistry.registerBlockRecipes();
+   }
 
-	@Mod.EventHandler
-	public void postInit(FMLPostInitializationEvent event) {
-		logger.info(TextHelper.localize("info." + ModInformation.ID + ".console.load.postInit"));
-	}
+   @Mod.EventHandler
+   public void postInit(FMLPostInitializationEvent event)
+   {
+      logger.info(TextHelper.localize("info." + ModInformation.ID + ".console.load.postInit"));
+      EntityHelper.adjustEntities();         
+   }
 }

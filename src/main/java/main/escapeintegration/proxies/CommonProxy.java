@@ -1,5 +1,6 @@
 package main.escapeintegration.proxies;
 
-public class CommonProxy {
+public class CommonProxy
+{
 
 }
