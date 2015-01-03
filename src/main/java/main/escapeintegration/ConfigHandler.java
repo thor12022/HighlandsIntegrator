@@ -15,10 +15,15 @@ public class ConfigHandler
 
    // Sections to add to the config
    public static String entitySection = "Entity Adjustments";
+   public static String generalSection = "General";
 
    // Options in the config
+   public static boolean doDebug = false;
    public static int minerZombieWeight = 1;
    public static int climbingZombieWeight = 1;
+   public static int moZombiesWeight = 4;
+   public static int moSurvivorWeight = 2;
+   
 
    public static void init(File file)
    {
@@ -28,11 +33,14 @@ public class ConfigHandler
 
    public static void syncConfig()
    {
-      config.addCustomCategoryComment(entitySection, "");
+      //config.addCustomCategoryComment(entitySection, "");
 
+      doDebug = config.getBoolean(generalSection, "Debug Information", doDebug, "");
+      
       minerZombieWeight = config.get(entitySection, "Miner Zombie Weight", minerZombieWeight, "").getInt(minerZombieWeight);
       climbingZombieWeight = config.get(entitySection, "Climbing Zombie Weight", climbingZombieWeight, "").getInt(climbingZombieWeight);
-
+      moZombiesWeight = config.get(entitySection, "Mo' Zombies Weight", moZombiesWeight, "").getInt(moZombiesWeight);
+      moSurvivorWeight = config.get(entitySection, "Mo' Survivor Weight", moSurvivorWeight, "").getInt(moSurvivorWeight);
       config.save();
    }
 }

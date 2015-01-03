@@ -82,6 +82,10 @@ public class EscapeIntegration
    public void postInit(FMLPostInitializationEvent event)
    {
       logger.info(TextHelper.localize("info." + ModInformation.ID + ".console.load.postInit"));
-      EntityHelper.adjustEntities();         
+      EntityHelper.adjustEntities();
+      if( ConfigHandler.doDebug )
+      { 
+         EntityHelper.debugInformation();
+      }         
    }
 }
