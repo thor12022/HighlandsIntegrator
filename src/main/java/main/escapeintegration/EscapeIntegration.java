@@ -76,12 +76,18 @@ public class EscapeIntegration
 
       ItemRecipeRegistry.registerItemRecipes();
       BlockRecipeRegistry.registerBlockRecipes();
+      
    }
 
    @Mod.EventHandler
    public void postInit(FMLPostInitializationEvent event)
    {
       logger.info(TextHelper.localize("info." + ModInformation.ID + ".console.load.postInit"));
+      EntityHelper.init();
+      if( ConfigHandler.doDebug )
+      { 
+         EntityHelper.debugInformation();
+      } 
       EntityHelper.adjustEntities();
       if( ConfigHandler.doDebug )
       { 

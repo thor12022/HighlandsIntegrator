@@ -11,6 +11,10 @@
   "credits": "TehNut for creating the base for me.",
   "logoFile": "",
   "screenshots": [],
-  "dependencies": []
+  "dependencies": [
+    "BiomesOPlenty",
+    "examplemod",
+    "mozombies"
+    ]
 }
 ]
