@@ -1,8 +1,8 @@
 [
 {
-  "modid": "escapeintegration",
-  "name": "Escape Integration",
-  "description": "Integration for the Escape mod-pack",
+  "modid": "feedthecreepertweaks",
+  "name": "Feed the Creeper Tweaks",
+  "description": "Tweaks for the Feed the Creeper mod-pack",
   "version": "0.0.1",
   "mcversion": "1.7.10",
   "url": "",
@@ -11,10 +11,6 @@
   "credits": "TehNut for creating the base for me.",
   "logoFile": "",
   "screenshots": [],
-  "dependencies": [
-    "BiomesOPlenty",
-    "examplemod",
-    "mozombies"
-    ]
+  "dependencies": []
 }
 ]
