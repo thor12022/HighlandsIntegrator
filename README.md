@@ -1,3 +1,3 @@
-#A Escape Integration
+#Feed the Creeper Tweaks
 
-Various mod-interations and tweaks for the Escape modpack
+Various mod-interations and tweaks for The Feed the Creeper Tweaks Pack
