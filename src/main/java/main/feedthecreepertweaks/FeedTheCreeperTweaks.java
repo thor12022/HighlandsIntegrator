@@ -5,6 +5,7 @@ package main.feedthecreepertweaks;
  * If you wish to add a description to a class, or extend/change an existing one, submit a PR with your changes.
  */
 
+//import biomesoplenty.api.content.BOPCBiomes;
 import cpw.mods.fml.common.FMLCommonHandler;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.SidedProxy;
@@ -20,9 +21,10 @@ import main.feedthecreepertweaks.client.gui.CreativeTabBaseMod;
 import main.feedthecreepertweaks.client.gui.GuiHandler;
 import main.feedthecreepertweaks.items.ItemRecipeRegistry;
 import main.feedthecreepertweaks.items.ItemRegistry;
+import main.feedthecreepertweaks.modhandlers.ThaumcraftHandler;
+import main.feedthecreepertweaks.modhandlers.BiomesOPlentyHandler;
 import main.feedthecreepertweaks.proxies.CommonProxy;
 import main.feedthecreepertweaks.util.EventHandler;
-import main.feedthecreepertweaks.util.GenerationHandler;
 import main.feedthecreepertweaks.util.OreDictHandler;
 import main.feedthecreepertweaks.util.TextHelper;
 import net.minecraft.creativetab.CreativeTabs;
@@ -64,11 +66,9 @@ public class FeedTheCreeperTweaks
 
       OreDictHandler.registerOreDict();
       FMLCommonHandler.instance().bus().register(new EventHandler());
-      NetworkRegistry.INSTANCE.registerGuiHandler(instance, new GuiHandler());
-
-      GameRegistry.registerWorldGenerator(new GenerationHandler(), 2);
+      NetworkRegistry.INSTANCE.registerGuiHandler(instance, new GuiHandler());   
    }
-
+   
    @Mod.EventHandler
    public void init(FMLInitializationEvent event)
    {
@@ -77,6 +77,8 @@ public class FeedTheCreeperTweaks
       ItemRecipeRegistry.registerItemRecipes();
       BlockRecipeRegistry.registerBlockRecipes();
       
+      ThaumcraftHandler.init(event);
+      BiomesOPlentyHandler.init(event);
    }
 
    @Mod.EventHandler
@@ -92,6 +94,6 @@ public class FeedTheCreeperTweaks
       if( ConfigHandler.doDebug )
       { 
          EntityHelper.debugInformation();
-      }         
+      }
    }
 }
