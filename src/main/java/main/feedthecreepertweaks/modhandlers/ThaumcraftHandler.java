@@ -1,6 +1,8 @@
 package main.feedthecreepertweaks.modhandlers;
 
 import cpw.mods.fml.common.event.FMLInitializationEvent;
+import main.feedthecreepertweaks.ConfigHandler;
+import main.feedthecreepertweaks.FeedTheCreeperTweaks;
 import net.minecraftforge.common.BiomeDictionary;
 import net.minecraftforge.common.BiomeManager.BiomeType;
 import thaumcraft.common.lib.world.ThaumcraftWorldGenerator;
@@ -11,8 +13,14 @@ public class ThaumcraftHandler
 {
    public static void init(FMLInitializationEvent event)
    {
-      biomeDictionary();
-      highlandsCompatibilty();
+      if(ConfigHandler.thaumcraftBiomeDictionary)
+      {
+         biomeDictionary();
+      }
+      if(ConfigHandler.thaumcraftHighlandsIntegration)
+      {
+         highlandsCompatibilty();
+      }
    }
    
    private static void highlandsCompatibilty()

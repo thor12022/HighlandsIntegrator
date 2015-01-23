@@ -1,6 +1,7 @@
 package main.feedthecreepertweaks.modhandlers;
 
 
+import main.feedthecreepertweaks.ConfigHandler;
 import net.minecraft.world.biome.BiomeGenBase;
 import biomesoplenty.api.content.BOPCBiomes;
 import biomesoplenty.common.configuration.BOPConfigurationBiomeWeights;
@@ -15,7 +16,10 @@ public class BiomesOPlentyHandler
 {
    public static void init(FMLInitializationEvent event)
    {
-      highlandsCompatibilty();
+      if(ConfigHandler.customBopHighlandsIntegration)
+      {
+         highlandsCompatibilty();
+      }
    }
    
    private static void highlandsCompatibilty()
@@ -24,9 +28,12 @@ public class BiomesOPlentyHandler
       
       // Alps disabled
       
-      AdvancedBiomeEntry alpsForest = new AdvancedBiomeEntry(BOPCBiomes.alpsForest, 10, modName);
-      AdvancedBiomeRegistry.addBiome(alpsForest, "sub", true);
-      AdvancedBiomeRegistry.addSubBiomeToBiome(BOPCBiomes.alpsForest, HighlandsBiomes.alps);
+      if(ConfigHandler.experimentalBopHighlandsIntegration)
+      {
+         AdvancedBiomeEntry alpsForest = new AdvancedBiomeEntry(BOPCBiomes.alpsForest, 10, modName);
+         AdvancedBiomeRegistry.addBiome(alpsForest, "sub", true);
+         AdvancedBiomeRegistry.addSubBiomeToBiome(BOPCBiomes.alpsForest, HighlandsBiomes.alps);
+      }
       
       // Artic disabled
       
@@ -74,8 +81,8 @@ public class BiomesOPlentyHandler
       AdvancedBiomeEntry flowerField = new AdvancedBiomeEntry(BOPCBiomes.flowerField, 3, modName);
       AdvancedBiomeRegistry.addBiome(flowerField, "warm", true);
 
-      AdvancedBiomeEntry frostForest = new AdvancedBiomeEntry(BOPCBiomes.frostForest, 7, modName);
-      AdvancedBiomeRegistry.addBiome(frostForest, "icy", true);
+      //AdvancedBiomeEntry frostForest = new AdvancedBiomeEntry(BOPCBiomes.frostForest, 7, modName);
+      //AdvancedBiomeRegistry.addBiome(frostForest, "icy", true);
 
       AdvancedBiomeEntry fungiForest = new AdvancedBiomeEntry(BOPCBiomes.fungiForest, 3, modName);
       AdvancedBiomeRegistry.addBiome(fungiForest, "cool", true);
@@ -90,8 +97,8 @@ public class BiomesOPlentyHandler
       AdvancedBiomeEntry heathland = new AdvancedBiomeEntry(BOPCBiomes.heathland, 10, modName);
       AdvancedBiomeRegistry.addBiome(heathland, "warm", true);
       
-      AdvancedBiomeEntry highland = new AdvancedBiomeEntry(BOPCBiomes.highland, 10, modName);
-      AdvancedBiomeRegistry.addBiome(highland, "warm", true);
+      //AdvancedBiomeEntry highland = new AdvancedBiomeEntry(BOPCBiomes.highland, 10, modName);
+      //AdvancedBiomeRegistry.addBiome(highland, "warm", true);
 
       // Jade Cliff disabled
       //AdvancedBiomeEntry jadeCliffs = new AdvancedBiomeEntry(BOPCBiomes.jadeCliffs, 5, modName);
@@ -120,10 +127,10 @@ public class BiomesOPlentyHandler
       AdvancedBiomeEntry mountain = new AdvancedBiomeEntry(BOPCBiomes.mountain, 10, modName);
       AdvancedBiomeRegistry.addBiome(mountain, "warm", true);
 
-      AdvancedBiomeEntry mysticGrove = new AdvancedBiomeEntry(BOPCBiomes.mysticGrove, 3, modName);
+      AdvancedBiomeEntry mysticGrove = new AdvancedBiomeEntry(BOPCBiomes.mysticGrove, 4, modName);
       AdvancedBiomeRegistry.addBiome(mysticGrove, "warm", true);
 
-      AdvancedBiomeEntry ominousWoods = new AdvancedBiomeEntry(BOPCBiomes.ominousWoods, 3, modName);
+      AdvancedBiomeEntry ominousWoods = new AdvancedBiomeEntry(BOPCBiomes.ominousWoods, 4, modName);
       AdvancedBiomeRegistry.addBiome(ominousWoods, "cool", true);
 
       AdvancedBiomeEntry originValley = new AdvancedBiomeEntry(BOPCBiomes.originValley, 1, modName);
@@ -132,14 +139,14 @@ public class BiomesOPlentyHandler
       AdvancedBiomeEntry outback = new AdvancedBiomeEntry(BOPCBiomes.outback, 7, modName);
       AdvancedBiomeRegistry.addBiome(outback, "hot", true);
 
-      AdvancedBiomeEntry prairie = new AdvancedBiomeEntry(BOPCBiomes.prairie, 10, modName);
-      AdvancedBiomeRegistry.addBiome(prairie, "warm", true);
+      //AdvancedBiomeEntry prairie = new AdvancedBiomeEntry(BOPCBiomes.prairie, 10, modName);
+      //AdvancedBiomeRegistry.addBiome(prairie, "warm", true);
 
       // Rainforest disabled
       
       // Redwood Forest disabled
       
-      AdvancedBiomeEntry sacredSprings = new AdvancedBiomeEntry(BOPCBiomes.sacredSprings, 3, modName);
+      AdvancedBiomeEntry sacredSprings = new AdvancedBiomeEntry(BOPCBiomes.sacredSprings, 4, modName);
       AdvancedBiomeRegistry.addBiome(sacredSprings, "warm", true);
 
       AdvancedBiomeEntry seasonalForest = new AdvancedBiomeEntry(BOPCBiomes.seasonalForest, 10, modName);
@@ -162,14 +169,20 @@ public class BiomesOPlentyHandler
       AdvancedBiomeEntry thicket = new AdvancedBiomeEntry(BOPCBiomes.thicket, 5, modName);
       AdvancedBiomeRegistry.addBiome(thicket, "cool", true);
 
-      AdvancedBiomeEntry tropicalRainforest = new AdvancedBiomeEntry(BOPCBiomes.tropicalRainforest, 5, modName);
-      AdvancedBiomeRegistry.addBiome(tropicalRainforest, "sub", true);
-      AdvancedBiomeRegistry.addSubBiomeToBiome(tropicalRainforest, HighlandsBiomes.tropics);
-
+      if(ConfigHandler.experimentalBopHighlandsIntegration)
+      {
+         AdvancedBiomeEntry tropicalRainforest = new AdvancedBiomeEntry(BOPCBiomes.tropicalRainforest, 5, modName);
+         AdvancedBiomeRegistry.addBiome(tropicalRainforest, "sub", true);
+         AdvancedBiomeRegistry.addSubBiomeToBiome(tropicalRainforest, HighlandsBiomes.tropics);
+      }
+      
       AdvancedBiomeEntry tundra = new AdvancedBiomeEntry(BOPCBiomes.tundra, 7, modName);
       AdvancedBiomeRegistry.addBiome(tundra, "icy", true);
-      AdvancedBiomeRegistry.addSubBiomeToBiome(BOPCBiomes.tundra, HighlandsBiomes.alps);
-      AdvancedBiomeRegistry.addSubBiomeToBiome(BOPCBiomes.tundra, HighlandsBiomes.tallPineForest);
+      if(ConfigHandler.experimentalBopHighlandsIntegration)
+      {
+         AdvancedBiomeRegistry.addSubBiomeToBiome(BOPCBiomes.tundra, HighlandsBiomes.alps);
+         AdvancedBiomeRegistry.addSubBiomeToBiome(BOPCBiomes.tundra, HighlandsBiomes.tallPineForest);
+      }
 
 
       AdvancedBiomeEntry volcano = new AdvancedBiomeEntry(BOPCBiomes.volcano, 1, modName);
@@ -181,8 +194,8 @@ public class BiomesOPlentyHandler
       AdvancedBiomeEntry wetland = new AdvancedBiomeEntry(BOPCBiomes.wetland, 7, modName);
       AdvancedBiomeRegistry.addBiome(wetland, "warm", true);
 
-      AdvancedBiomeEntry woodland = new AdvancedBiomeEntry(BOPCBiomes.woodland, 10, modName);
-      AdvancedBiomeRegistry.addBiome(woodland, "warm", true);
+      //AdvancedBiomeEntry woodland = new AdvancedBiomeEntry(BOPCBiomes.woodland, 10, modName);
+      //AdvancedBiomeRegistry.addBiome(woodland, "warm", true);
 
       
 
@@ -203,6 +216,7 @@ public class BiomesOPlentyHandler
       AdvancedBiomeEntry canyonRavine = new AdvancedBiomeEntry(BOPCBiomes.canyonRavine, 10, modName);
       AdvancedBiomeRegistry.addBiome(canyonRavine, "sub", true);
       AdvancedBiomeRegistry.addSubBiomeToBiome(canyonRavine, BOPCBiomes.canyon);
+      
 
       // Glacier disabled
       
@@ -244,17 +258,23 @@ public class BiomesOPlentyHandler
       AdvancedBiomeRegistry.setRiverBiomeToBiome(BOPCBiomes.lushRiver, BiomeGenBase.jungle);
       AdvancedBiomeRegistry.setRiverBiomeToBiome(BOPCBiomes.lushRiver, BiomeGenBase.jungleEdge);
       AdvancedBiomeRegistry.setRiverBiomeToBiome(BOPCBiomes.lushRiver, BiomeGenBase.jungleHills);
-      AdvancedBiomeRegistry.setRiverBiomeToBiome(BOPCBiomes.lushRiver, HighlandsBiomes.flyingMountains);
-      AdvancedBiomeRegistry.setRiverBiomeToBiome(BOPCBiomes.lushRiver, HighlandsBiomes.birchHills);
-      AdvancedBiomeRegistry.setRiverBiomeToBiome(BOPCBiomes.lushRiver, HighlandsBiomes.rainforest);
-      AdvancedBiomeRegistry.setRiverBiomeToBiome(BOPCBiomes.lushRiver, HighlandsBiomes.tropics);
-      AdvancedBiomeRegistry.setRiverBiomeToBiome(BOPCBiomes.lushRiver, HighlandsBiomes.woodlands);
+      if(ConfigHandler.experimentalBopHighlandsIntegration)
+      {
+         AdvancedBiomeRegistry.setRiverBiomeToBiome(BOPCBiomes.lushRiver, HighlandsBiomes.flyingMountains);
+         AdvancedBiomeRegistry.setRiverBiomeToBiome(BOPCBiomes.lushRiver, HighlandsBiomes.birchHills);
+         AdvancedBiomeRegistry.setRiverBiomeToBiome(BOPCBiomes.lushRiver, HighlandsBiomes.rainforest);
+         AdvancedBiomeRegistry.setRiverBiomeToBiome(BOPCBiomes.lushRiver, HighlandsBiomes.tropics);
+         AdvancedBiomeRegistry.setRiverBiomeToBiome(BOPCBiomes.lushRiver, HighlandsBiomes.woodlands);
+      }
       
       AdvancedBiomeRegistry.setRiverBiomeToBiome(BOPCBiomes.dryRiver, BOPCBiomes.outback);
       AdvancedBiomeRegistry.setRiverBiomeToBiome(BOPCBiomes.dryRiver, BiomeGenBase.desert);
       AdvancedBiomeRegistry.setRiverBiomeToBiome(BOPCBiomes.dryRiver, BiomeGenBase.desertHills);
-      AdvancedBiomeRegistry.setRiverBiomeToBiome(BOPCBiomes.dryRiver, HighlandsBiomes.desertMountains);
-      AdvancedBiomeRegistry.setRiverBiomeToBiome(BOPCBiomes.dryRiver, HighlandsBiomes.dunes);
-      AdvancedBiomeRegistry.setRiverBiomeToBiome(BOPCBiomes.dryRiver, HighlandsBiomes.outback);
+      if(ConfigHandler.experimentalBopHighlandsIntegration)
+      {
+         AdvancedBiomeRegistry.setRiverBiomeToBiome(BOPCBiomes.dryRiver, HighlandsBiomes.desertMountains);
+         AdvancedBiomeRegistry.setRiverBiomeToBiome(BOPCBiomes.dryRiver, HighlandsBiomes.dunes);
+         AdvancedBiomeRegistry.setRiverBiomeToBiome(BOPCBiomes.dryRiver, HighlandsBiomes.outback);
+      }
    }
 }

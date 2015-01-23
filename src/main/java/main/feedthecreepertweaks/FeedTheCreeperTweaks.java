@@ -39,7 +39,7 @@ import org.apache.logging.log4j.Logger;
 
 import scala.Array;
 
-@Mod(modid = ModInformation.ID, name = ModInformation.NAME, version = ModInformation.VERSION, dependencies = ModInformation.DEPEND, guiFactory = ModInformation.GUIFACTORY)
+@Mod(modid = ModInformation.ID, name = ModInformation.NAME, version = ModInformation.VERSION, dependencies = ModInformation.DEPEND)
 public class FeedTheCreeperTweaks
 {
 
