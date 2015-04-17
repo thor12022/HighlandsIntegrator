@@ -18,6 +18,7 @@ import main.feedthecreepertweaks.items.ItemUnbreakingShovel;
 import main.feedthecreepertweaks.items.ItemUnbreakingSword;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
+import net.minecraft.item.crafting.CraftingManager;
 
 public class ProgressiveAutomationHandler
 {

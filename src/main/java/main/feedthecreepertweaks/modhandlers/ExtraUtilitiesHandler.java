@@ -17,6 +17,7 @@ import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.registry.GameRegistry;
 import main.feedthecreepertweaks.ConfigHandler;
 import main.feedthecreepertweaks.FeedTheCreeperTweaks;
+import main.feedthecreepertweaks.ModInformation;
 import main.feedthecreepertweaks.items.ItemUnbreakingAxe;
 import main.feedthecreepertweaks.items.ItemUnbreakingHoe;
 import main.feedthecreepertweaks.items.ItemUnbreakingPick;
