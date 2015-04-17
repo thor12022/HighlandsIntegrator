@@ -7,15 +7,20 @@ package main.feedthecreepertweaks.items;
  */
 
 import cpw.mods.fml.common.registry.GameRegistry;
+import main.feedthecreepertweaks.ConfigHandler;
+import main.feedthecreepertweaks.ModInformation;
 import net.minecraft.item.Item;
+import net.minecraft.item.Item.ToolMaterial;
+import net.minecraftforge.common.util.EnumHelper;
 
 public class ItemRegistry
 {
 
    // items
    // public static Item exampleItem;
-   public static Item baseBook;
-
+   public static Item starryApple;
+   
+   
    // I use multiple sections here to sort things. It's just my system, you
    // don't have to.
    // Just delete "registerItemSet2" and "registerAllItems" then make this
@@ -25,8 +30,11 @@ public class ItemRegistry
    {
       // exampleItem = new ItemExample();
       // GameRegistry.registerItem(exampleItem, "ItemExample");
-
-      baseBook = new ItemBaseBook();
-      GameRegistry.registerItem(baseBook, "ItemBaseBook");
+      
+      starryApple = new ItemStarryApple();
+      if(ConfigHandler.enableStarryApple)
+      {
+         GameRegistry.registerItem(starryApple, "StarryApple");
+      }
    }
 }
