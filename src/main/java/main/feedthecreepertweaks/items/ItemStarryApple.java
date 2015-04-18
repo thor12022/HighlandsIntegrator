@@ -59,11 +59,11 @@ public class ItemStarryApple extends ItemFood
        if (!world.isRemote)
        {
           player.addPotionEffect(new PotionEffect(PotionRegistry.potionAntiWither.id, 2400, 0));
-          player.addPotionEffect(new PotionEffect(Potion.field_76444_x.id,          2400, 1));
-          player.addPotionEffect(new PotionEffect(Potion.regeneration.id,           2400, 1));
-          player.addPotionEffect(new PotionEffect(Potion.resistance.id,             2400, 1));
-          player.addPotionEffect(new PotionEffect(Potion.damageBoost.id,            2400, 1));
-          player.addPotionEffect(new PotionEffect(Potion.heal.id,                   0,    1));
+          player.addPotionEffect(new PotionEffect(Potion.field_76444_x.id,          1200, 0));
+          player.addPotionEffect(new PotionEffect(Potion.regeneration.id,           900, 1));
+          player.addPotionEffect(new PotionEffect(Potion.resistance.id,             900, 1));
+          player.addPotionEffect(new PotionEffect(Potion.damageBoost.id,            900, 1));
+          player.addPotionEffect(new PotionEffect(Potion.heal.id,                   0,    0));
        }
    }
 }
