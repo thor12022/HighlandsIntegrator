@@ -74,6 +74,9 @@ public class BiomesOPlentyHandler
 
       AdvancedBiomeEntry deciduousForest = new AdvancedBiomeEntry(BOPCBiomes.deciduousForest, 10, modName);
       AdvancedBiomeRegistry.addBiome(deciduousForest, "warm", true); 
+      
+      AdvancedBiomeEntry eucalyptusForest = new AdvancedBiomeEntry(BOPCBiomes.eucalyptusForest, 5, modName);
+      AdvancedBiomeRegistry.addBiome(eucalyptusForest, "hot", true); 
 
       AdvancedBiomeEntry fen = new AdvancedBiomeEntry(BOPCBiomes.fen, 10, modName);
       AdvancedBiomeRegistry.addBiome(fen, "warm", true);
@@ -103,6 +106,9 @@ public class BiomesOPlentyHandler
       // Jade Cliff disabled
       //AdvancedBiomeEntry jadeCliffs = new AdvancedBiomeEntry(BOPCBiomes.jadeCliffs, 5, modName);
       //AdvancedBiomeRegistry.addBiome(jadeCliffs, "warm", true);
+      
+      AdvancedBiomeEntry landOfLakes = new AdvancedBiomeEntry(BOPCBiomes.landOfLakes, 3, modName);
+      AdvancedBiomeRegistry.addBiome(landOfLakes, "cool", true);
 
       AdvancedBiomeEntry lavenderFields = new AdvancedBiomeEntry(BOPCBiomes.lavenderFields, 3, modName);
       AdvancedBiomeRegistry.addBiome(lavenderFields, "warm", true);
@@ -135,6 +141,10 @@ public class BiomesOPlentyHandler
 
       AdvancedBiomeEntry originValley = new AdvancedBiomeEntry(BOPCBiomes.originValley, 1, modName);
       AdvancedBiomeRegistry.addBiome(originValley, "warm", true);
+      
+
+      AdvancedBiomeEntry orchard = new AdvancedBiomeEntry(BOPCBiomes.orchard, 3, modName);
+      AdvancedBiomeRegistry.addBiome(orchard, "warm", true);
       
       AdvancedBiomeEntry outback = new AdvancedBiomeEntry(BOPCBiomes.outback, 7, modName);
       AdvancedBiomeRegistry.addBiome(outback, "hot", true);
@@ -197,6 +207,8 @@ public class BiomesOPlentyHandler
       //AdvancedBiomeEntry woodland = new AdvancedBiomeEntry(BOPCBiomes.woodland, 10, modName);
       //AdvancedBiomeRegistry.addBiome(woodland, "warm", true);
 
+      AdvancedBiomeEntry xericShrubland = new AdvancedBiomeEntry(BOPCBiomes.xericShrubland, 4, modName);
+      AdvancedBiomeRegistry.addBiome(xericShrubland, "hot", true);
       
 
       AdvancedBiomeEntry coralReef = new AdvancedBiomeEntry(BOPCBiomes.coralReef, 10, modName);
@@ -222,13 +234,13 @@ public class BiomesOPlentyHandler
       
       // Meadow Forest disabled
 
+      AdvancedBiomeEntry landOfLakesMarsh = new AdvancedBiomeEntry(BOPCBiomes.landOfLakesMarsh, 10, modName);
+      AdvancedBiomeRegistry.addBiome(landOfLakesMarsh, "sub", true);
+      AdvancedBiomeRegistry.addSubBiomeToBiome(landOfLakesMarsh, BOPCBiomes.landOfLakes);
+      
       AdvancedBiomeEntry oasis = new AdvancedBiomeEntry(BOPCBiomes.oasis, 10, modName);
       AdvancedBiomeRegistry.addBiome(oasis, "sub", true);
       AdvancedBiomeRegistry.addSubBiomeToBiome(oasis, BiomeGenBase.desert);
-
-      AdvancedBiomeEntry orchard = new AdvancedBiomeEntry(BOPCBiomes.orchard, 10, modName);
-      AdvancedBiomeRegistry.addBiome(orchard, "sub", true);
-      AdvancedBiomeRegistry.addSubBiomeToBiome(orchard, BiomeGenBase.plains);
 
       AdvancedBiomeEntry quagmire = new AdvancedBiomeEntry(BOPCBiomes.quagmire, 10, modName);
       AdvancedBiomeRegistry.addBiome(quagmire, "sub", true);
