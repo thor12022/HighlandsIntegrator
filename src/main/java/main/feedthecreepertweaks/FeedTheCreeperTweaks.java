@@ -22,6 +22,7 @@ import main.feedthecreepertweaks.client.gui.CreativeTabBaseMod;
 import main.feedthecreepertweaks.client.gui.GuiHandler;
 import main.feedthecreepertweaks.items.ItemRecipeRegistry;
 import main.feedthecreepertweaks.items.ItemRegistry;
+import main.feedthecreepertweaks.modhandlers.BuildCraftHandler;
 import main.feedthecreepertweaks.modhandlers.ExtraUtilitiesHandler;
 import main.feedthecreepertweaks.modhandlers.ProgressiveAutomationHandler;
 import main.feedthecreepertweaks.modhandlers.ThaumcraftHandler;
@@ -100,6 +101,7 @@ public class FeedTheCreeperTweaks
       ProgressiveAutomationHandler.init(event);
       TinkersConstructHandler.init(event);
       ExtraUtilitiesHandler.init(event);
+      BuildCraftHandler.init(event);
    }
 
    @Mod.EventHandler

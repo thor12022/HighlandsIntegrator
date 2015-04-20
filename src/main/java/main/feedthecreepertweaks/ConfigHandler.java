@@ -21,6 +21,7 @@ public class ConfigHandler
    public static final String progressiveAutomationSection = "Progressive Automation";
    public static final String tinkersConstructSection = "Tinkers' Construct";
    public static final String extraUtilitiesSection = "Extra Utilities";
+   public static final String buildCraftSection = "BuildCraft";
 
    // Options in the config
    public static boolean doDebug = false;
@@ -37,6 +38,7 @@ public class ConfigHandler
    public static boolean enableGreenHeartWitherDrop = true;
    public static boolean enableBedrockiumTools = true;
    public static boolean unbreakableEtherealTools = true;
+   public static boolean buildCraftHighlandsIntegration = true;
    
    public static void init(File file)
    {
@@ -66,6 +68,7 @@ public class ConfigHandler
       enableBedrockiumTools = config.getBoolean("Add Bedrockium Tools",extraUtilitiesSection, enableBedrockiumTools, "");
       unbreakableEtherealTools = config.getBoolean("Make Ethereal Tools Actually unbreakable",extraUtilitiesSection, unbreakableEtherealTools, "They will no longer be able to be enchanted");
       
+      buildCraftHighlandsIntegration = config.getBoolean("Highlands Integration",buildCraftSection, buildCraftHighlandsIntegration, "Registers BuildCraft biomes with Highlands");
       
       config.save();
    }
