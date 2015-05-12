@@ -1,8 +1,8 @@
-package main.feedthecreepertweaks.modhandlers;
+package thor12022.highlandsintegrator.modhandlers;
 
 import cpw.mods.fml.common.event.FMLInitializationEvent;
-import main.feedthecreepertweaks.ConfigHandler;
-import main.feedthecreepertweaks.FeedTheCreeperTweaks;
+import thor12022.highlandsintegrator.ConfigHandler;
+import thor12022.highlandsintegrator.HighlandsIntegrator;
 import net.minecraftforge.common.BiomeDictionary;
 import net.minecraftforge.common.BiomeManager.BiomeType;
 import buildcraft.BuildCraftEnergy;

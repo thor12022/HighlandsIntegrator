@@ -1,4 +1,4 @@
-package main.feedthecreepertweaks.util;
+package thor12022.highlandsintegrator.util;
 
 /*
  * Class for most of your events to be registered in.
@@ -12,9 +12,9 @@ import net.minecraft.util.ChatComponentTranslation;
 import net.minecraftforge.event.entity.player.PlayerUseItemEvent;
 import cpw.mods.fml.client.event.ConfigChangedEvent;
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
-import main.feedthecreepertweaks.ConfigHandler;
-import main.feedthecreepertweaks.FeedTheCreeperTweaks;
-import main.feedthecreepertweaks.ModInformation;
+import thor12022.highlandsintegrator.ConfigHandler;
+import thor12022.highlandsintegrator.HighlandsIntegrator;
+import thor12022.highlandsintegrator.ModInformation;
 
 public class EventHandler
 {
@@ -25,7 +25,7 @@ public class EventHandler
       if(eventArgs.modID.equals(ModInformation.ID))
       {
          ConfigHandler.syncConfig();
-         FeedTheCreeperTweaks.logger.info(TextHelper.localize("info." + ModInformation.ID + ".console.config.refresh"));
+         HighlandsIntegrator.logger.info(TextHelper.localize("info." + ModInformation.ID + ".console.config.refresh"));
       }
    }
 }

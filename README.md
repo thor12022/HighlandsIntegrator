@@ -1,3 +1,3 @@
-#Feed the Creeper Tweaks
+#Highlands Integrator
 
-Various mod-interations and tweaks for The Feed the Creeper Tweaks Pack
+Allows registration of common and arbitrary biomes with Highlands

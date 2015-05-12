@@ -1,8 +1,8 @@
-package main.feedthecreepertweaks.modhandlers;
+package thor12022.highlandsintegrator.modhandlers;
 
 import cpw.mods.fml.common.event.FMLInitializationEvent;
-import main.feedthecreepertweaks.ConfigHandler;
-import main.feedthecreepertweaks.FeedTheCreeperTweaks;
+import thor12022.highlandsintegrator.ConfigHandler;
+import thor12022.highlandsintegrator.HighlandsIntegrator;
 import net.minecraftforge.common.BiomeDictionary;
 import net.minecraftforge.common.BiomeManager.BiomeType;
 import thaumcraft.common.lib.world.ThaumcraftWorldGenerator;
@@ -13,10 +13,6 @@ public class ThaumcraftHandler
 {
    public static void init(FMLInitializationEvent event)
    {
-      if(ConfigHandler.thaumcraftBiomeDictionary)
-      {
-         biomeDictionary();
-      }
       if(ConfigHandler.thaumcraftHighlandsIntegration)
       {
          highlandsCompatibilty();
@@ -34,19 +30,5 @@ public class ThaumcraftHandler
       AdvancedBiomeEntry biomeTaint = new AdvancedBiomeEntry(ThaumcraftWorldGenerator.biomeTaint, thaumcraft.common.config.Config.biomeTaintWeight, modName);
       AdvancedBiomeRegistry.addBiome(biomeTaint, "warm", true);
       AdvancedBiomeRegistry.addBiome(biomeTaint, "cool", true);
-   }
-   
-   private static void biomeDictionary()
-   {     
-      BiomeDictionary.makeBestGuess(ThaumcraftWorldGenerator.biomeMagicalForest);
-      BiomeDictionary.registerBiomeType(ThaumcraftWorldGenerator.biomeMagicalForest, BiomeDictionary.Type.MAGICAL);
-      
-      BiomeDictionary.makeBestGuess(ThaumcraftWorldGenerator.biomeTaint);
-      BiomeDictionary.registerBiomeType(ThaumcraftWorldGenerator.biomeTaint, BiomeDictionary.Type.MAGICAL);
-      BiomeDictionary.makeBestGuess(ThaumcraftWorldGenerator.biomeEerie);
-      BiomeDictionary.registerBiomeType(ThaumcraftWorldGenerator.biomeEerie, BiomeDictionary.Type.MAGICAL);
-      
-      BiomeDictionary.makeBestGuess(ThaumcraftWorldGenerator.biomeEldritchLands);
-      BiomeDictionary.registerBiomeType(ThaumcraftWorldGenerator.biomeEldritchLands, BiomeDictionary.Type.MAGICAL);
    }
 }

@@ -1,4 +1,4 @@
-package main.feedthecreepertweaks.util;
+package thor12022.highlandsintegrator.util;
 
 //General place to call text formatting from. You can alternatively use 'EnumChatFormatting'.
 

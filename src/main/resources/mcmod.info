@@ -1,14 +1,14 @@
 [
 {
-  "modid": "feedthecreepertweaks",
-  "name": "Feed the Creeper Tweaks",
-  "description": "Tweaks for the Feed the Creeper mod-pack",
-  "version": "1.1.0",
+  "modid": "highlandsintegrator",
+  "name": "Highlands Integrator",
+  "description": "Allows registration of common and arbitrary biomes with Highlands",
+  "version": "0.0.1",
   "mcversion": "1.7.10",
-  "url": "",
+  "url": "https://github.com/thor12022/HighlandsIntegrator",
   "updateUrl": "",
   "authorList": ["Thor12022"],
-  "credits": "TehNut for creating the base for me.",
+  "credits": "TehNut for creating the base mod I started with.",
   "logoFile": "",
   "screenshots": [],
   "dependencies": []
