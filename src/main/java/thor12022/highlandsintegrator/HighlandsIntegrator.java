@@ -18,6 +18,7 @@ import cpw.mods.fml.common.network.NetworkRegistry;
 import cpw.mods.fml.common.registry.EntityRegistry;
 import cpw.mods.fml.common.registry.GameRegistry;
 import thor12022.highlandsintegrator.modhandlers.BuildCraftHandler;
+import thor12022.highlandsintegrator.modhandlers.ManualHandler;
 import thor12022.highlandsintegrator.modhandlers.ThaumcraftHandler;
 import thor12022.highlandsintegrator.proxies.CommonProxy;
 import thor12022.highlandsintegrator.util.EventHandler;
@@ -52,7 +53,7 @@ public class HighlandsIntegrator
    {
       logger.info(TextHelper.localize("info." + ModInformation.ID + ".console.load.preInit"));
 
-      ConfigHandler.init(event.getSuggestedConfigurationFile());
+      ConfigHandler.init(event);
 
       FMLCommonHandler.instance().bus().register(new EventHandler());
    }
@@ -64,12 +65,14 @@ public class HighlandsIntegrator
 
       if( Loader.isModLoaded("Thaumcraft") )
       {
-    	  ThaumcraftHandler.init(event);
+         ThaumcraftHandler.init(event);
       }
       if( Loader.isModLoaded("BuildCraft|Energy"))
       {
-    	  BuildCraftHandler.init(event);
+         BuildCraftHandler.init(event);
       }
+      
+      ManualHandler.init(event);
    }
 
    @Mod.EventHandler

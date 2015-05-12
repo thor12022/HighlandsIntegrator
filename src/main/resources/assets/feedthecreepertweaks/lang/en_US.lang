@@ -5,3 +5,6 @@ info.highlandsintegrator.console.load.init=Begin Initialization
 info.highlandsintegrator.console.load.postInit=Begin Post-initialization
 info.highlandsintegrator.console.load.init.thaumcraft=Initializing Thaumcraft compatibility
 info.highlandsintegrator.console.load.init.buildcraft=Initializing BuildCraft compatibility
+info.highlandsintegrator.console.load.init.manual=Initializing Manualy Integrated Biomes
+warning.highlandsintegrator.console.load.init.biomeJson=Cannot open file
+warning.highlandsintegrator.console.parseJson=Cannot read JSON file
