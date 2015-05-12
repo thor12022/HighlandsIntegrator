@@ -7,6 +7,7 @@ package thor12022.highlandsintegrator;
 
 //import biomesoplenty.api.content.BOPCBiomes;
 import cpw.mods.fml.common.FMLCommonHandler;
+import cpw.mods.fml.common.Loader;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
@@ -38,7 +39,7 @@ import scala.Array;
 public class HighlandsIntegrator
 {
 
-   @SidedProxy(serverSide = ModInformation.COMMONPROXY)
+   @SidedProxy(clientSide = ModInformation.CLIENTPROXY, serverSide = ModInformation.COMMONPROXY)
    public static CommonProxy proxy;
 
    public static Logger logger = LogManager.getLogger(ModInformation.NAME);
@@ -61,8 +62,14 @@ public class HighlandsIntegrator
    {
       logger.info(TextHelper.localize("info." + ModInformation.ID + ".console.load.init"));
 
-      ThaumcraftHandler.init(event);
-      BuildCraftHandler.init(event);
+      if( Loader.isModLoaded("Thaumcraft") )
+      {
+    	  ThaumcraftHandler.init(event);
+      }
+      if( Loader.isModLoaded("BuildCraft|Energy"))
+      {
+    	  BuildCraftHandler.init(event);
+      }
    }
 
    @Mod.EventHandler

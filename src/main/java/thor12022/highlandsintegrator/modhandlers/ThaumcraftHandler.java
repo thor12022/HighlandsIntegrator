@@ -3,6 +3,8 @@ package thor12022.highlandsintegrator.modhandlers;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import thor12022.highlandsintegrator.ConfigHandler;
 import thor12022.highlandsintegrator.HighlandsIntegrator;
+import thor12022.highlandsintegrator.ModInformation;
+import thor12022.highlandsintegrator.util.TextHelper;
 import net.minecraftforge.common.BiomeDictionary;
 import net.minecraftforge.common.BiomeManager.BiomeType;
 import thaumcraft.common.lib.world.ThaumcraftWorldGenerator;
@@ -21,6 +23,8 @@ public class ThaumcraftHandler
    
    private static void highlandsCompatibilty()
    {
+	  HighlandsIntegrator.logger.info(TextHelper.localize("info." + ModInformation.ID + ".console.load.init.thaumcraft"));
+	  
       String modName = "Thaumcraft";
       
       AdvancedBiomeEntry biomeMagicalForest = new AdvancedBiomeEntry(ThaumcraftWorldGenerator.biomeMagicalForest, thaumcraft.common.config.Config.biomeMagicalForestWeight, modName);

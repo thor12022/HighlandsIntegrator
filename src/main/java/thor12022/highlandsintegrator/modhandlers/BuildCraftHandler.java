@@ -3,6 +3,8 @@ package thor12022.highlandsintegrator.modhandlers;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import thor12022.highlandsintegrator.ConfigHandler;
 import thor12022.highlandsintegrator.HighlandsIntegrator;
+import thor12022.highlandsintegrator.ModInformation;
+import thor12022.highlandsintegrator.util.TextHelper;
 import net.minecraftforge.common.BiomeDictionary;
 import net.minecraftforge.common.BiomeManager.BiomeType;
 import buildcraft.BuildCraftEnergy;
@@ -21,7 +23,9 @@ public class BuildCraftHandler
    
    private static void highlandsCompatibilty()
    {
-      String modName = "BuildCraft";
+	  HighlandsIntegrator.logger.info(TextHelper.localize("info." + ModInformation.ID + ".console.load.init.buildcraft"));
+		  
+	  String modName = "BuildCraft";
       
       AdvancedBiomeEntry biomeOilDesert = new AdvancedBiomeEntry( BuildCraftEnergy.biomeOilDesert, 2, modName);
       AdvancedBiomeRegistry.addBiome(biomeOilDesert, "hot", true);

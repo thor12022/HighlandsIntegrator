@@ -12,5 +12,6 @@ public class ModInformation
    public static final String CHANNEL = "HighlandsIntegrator";
    public static final String DEPEND = "required-after:Highlands;after:Thaumcraft;after:BuildCraft|Energy";
    public static final String VERSION = "0.0.1";
-   public static final String COMMONPROXY = "thor12022.highlandsintegrator.proxies.CommonProxy";;
+   public static final String CLIENTPROXY = "thor12022.highlandsintegrator.proxies.ClientProxy";
+   public static final String COMMONPROXY = "thor12022.highlandsintegrator.proxies.CommonProxy";
 }

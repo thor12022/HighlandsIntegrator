@@ -1,56 +1,7 @@
-﻿#CREATIVE TAB
-itemGroup.feedthecreepertweaks.creativeTab=Feed the Creeper Tweaks
-
-#CONFIG GUI
-gui.feedthecreepertweaks.config.title=Feed the Creeper Tweaks Configuration
-
-#BLOCKS
-
-#ITEMS
-item.feedthecreepertweaks.starryApple.name=Starry Apple
-item.feedthecreepertweaks.axeBedrockium.name=Bedrockium Axe
-item.feedthecreepertweaks.hoeBedrockium.name=Bedrockium Hoe
-item.feedthecreepertweaks.pickBedrockium.name=Bedrockium Pickaxe
-item.feedthecreepertweaks.shovelBedrockium.name=Bedrockium Shovel
-item.feedthecreepertweaks.swordBedrockium.name=Bedrockium Sword
-
-item.feedthecreepertweaks.axeWitheredWood.name=Wood Axe
-item.feedthecreepertweaks.hoeWitheredWood.name=Wood Hoe
-item.feedthecreepertweaks.pickWitheredWood.name=Wood Pickaxe
-item.feedthecreepertweaks.shovelWitheredWood.name=Wood Shovel
-item.feedthecreepertweaks.swordWitheredWood.name=Wood Sword
-
-item.feedthecreepertweaks.axeWitheredStone.name=Stone Axe
-item.feedthecreepertweaks.hoeWitheredStone.name=Stone Hoe
-item.feedthecreepertweaks.pickWitheredStone.name=Stone Pickaxe
-item.feedthecreepertweaks.shovelWitheredStone.name=Stone Shovel
-item.feedthecreepertweaks.swordWitheredStone.name=Stone Sword
-
-item.feedthecreepertweaks.axeWitheredIron.name=Iron Axe
-item.feedthecreepertweaks.hoeWitheredIron.name=Iron Hoe
-item.feedthecreepertweaks.pickWitheredIron.name=Iron Pickaxe
-item.feedthecreepertweaks.shovelWitheredIron.name=Iron Shovel
-item.feedthecreepertweaks.swordWitheredIron.name=Iron Sword
-
-item.feedthecreepertweaks.axeWitheredDiamond.name=Diamond Axe
-item.feedthecreepertweaks.hoeWitheredDiamond.name=Diamond Hoe
-item.feedthecreepertweaks.pickWitheredDiamond.name=Diamond Pickaxe
-item.feedthecreepertweaks.shovelWitheredDiamond.name=Diamond Shovel
-item.feedthecreepertweaks.swordWitheredDiamond.name=Diamond Sword
-
-
-#TOOLTIPS
-tooltip.feedthecreepertweaks.unbreaking=Simply Unbreakable™
-tooltip.feedthecreepertweaks.starryApple=With fortune this may turn a Wither's heart green with envy.
-
-#POTIONS
-potion.antiWither=Anti-Wither
-
-#CONSOLE LOG
-info.feedthecreepertweaks.console.config.refresh=Refreshing configuration file.
-info.feedthecreepertweaks.console.load.preInit=Begin Pre-initialization
-info.feedthecreepertweaks.console.load.init=Begin Initialization
-info.feedthecreepertweaks.console.load.postInit=Begin Post-initialization
-
-#CHAT
-info.feedthecreepertweaks.chat.never-withered=No Pain. No Gain. No Green Heart.
+﻿#CONSOLE LOG
+info.highlandsintegrator.console.config.refresh=Refreshing configuration file.
+info.highlandsintegrator.console.load.preInit=Begin Pre-initialization
+info.highlandsintegrator.console.load.init=Begin Initialization
+info.highlandsintegrator.console.load.postInit=Begin Post-initialization
+info.highlandsintegrator.console.load.init.thaumcraft=Initializing Thaumcraft compatibility
+info.highlandsintegrator.console.load.init.buildcraft=Initializing BuildCraft compatibility
