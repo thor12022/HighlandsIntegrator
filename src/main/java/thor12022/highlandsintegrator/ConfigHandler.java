@@ -50,6 +50,8 @@ public class ConfigHandler
    public static boolean doDebug = false;
    public static boolean thaumcraftHighlandsIntegration = true;
    public static boolean buildCraftHighlandsIntegration = true;
+   public static int buildCraftOceanOilFieldsWeight = 2;
+   public static int buildCraftDesertOilFieldsWeight = 2;
    public static List<ManualEntry> manualEntries = new ArrayList();
 
    public static void init(FMLPreInitializationEvent event)
@@ -83,6 +85,8 @@ public class ConfigHandler
       thaumcraftHighlandsIntegration = config.getBoolean("Enable Integration", thaumcraftSection, thaumcraftHighlandsIntegration, "Registers Thaumcraft biomes with Highlands");
 
       buildCraftHighlandsIntegration = config.getBoolean("Enable Integration", buildCraftSection, buildCraftHighlandsIntegration, "Registers BuildCraft biomes with Highlands");
+      buildCraftOceanOilFieldsWeight = config.get("Ocean Oil Fields Weight", buildCraftSection, buildCraftOceanOilFieldsWeight, "").getInt();
+      buildCraftDesertOilFieldsWeight = config.get("Desert Oil Fields Weight", buildCraftSection, buildCraftDesertOilFieldsWeight, "").getInt();
 
       config.save();
       

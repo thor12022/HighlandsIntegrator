@@ -27,10 +27,10 @@ public class BuildCraftHandler
 		  
 	  String modName = "BuildCraft";
       
-      AdvancedBiomeEntry biomeOilDesert = new AdvancedBiomeEntry( BuildCraftEnergy.biomeOilDesert, 2, modName);
+      AdvancedBiomeEntry biomeOilDesert = new AdvancedBiomeEntry( BuildCraftEnergy.biomeOilDesert, ConfigHandler.buildCraftDesertOilFieldsWeight, modName);
       AdvancedBiomeRegistry.addBiome(biomeOilDesert, "hot", true);
 
-      AdvancedBiomeEntry biomeTaint = new AdvancedBiomeEntry(BuildCraftEnergy.biomeOilOcean, 2, modName);
+      AdvancedBiomeEntry biomeTaint = new AdvancedBiomeEntry(BuildCraftEnergy.biomeOilOcean, ConfigHandler.buildCraftOceanOilFieldsWeight, modName);
       AdvancedBiomeRegistry.addBiome(biomeTaint, "ocean", true);
       
       
